@@ -31,4 +31,11 @@ window.onload = function() {
   window.onkeydown = processKey;
 };
 
+window.onbeforeunload = function() {
+  if (typeof localStorage !== "undefined") {
+      localStorage.setItem("mazeGame_currentX", x);
+      localStorage.setItem("mazeGame_currentY", y);
+  }
+}
+
 }
